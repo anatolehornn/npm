@@ -155,6 +155,23 @@ after packing it up into a tarball (b).
           npm install sax@">=0.1.0 <0.2.0"
           npm install @myorg/privatepackage@">=0.1.0 <0.2.0"
 
+* `npm install <git remote url>`:
+
+    Install a package by cloning a git remote url.  The format of the git
+    url is:
+
+          <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:/]<path>[#<commit-ish>]
+
+    `<protocol>` is one of `git`, `git+ssh`, `git+http`, or
+    `git+https`.  If no `<commit-ish>` is specified, then `master` is
+    used.
+
+    Examples:
+
+          git+ssh://git@github.com:npm/npm.git#v1.0.27
+          git+https://isaacs@github.com/npm/npm.git
+          git://github.com/npm/npm.git#v1.0.27
+
 * `npm install <githubname>/<githubrepo>[#<commit-ish>]`:
 * `npm install github:<githubname>/<githubrepo>[#<commit-ish>]`:
 
@@ -167,9 +184,6 @@ after packing it up into a tarball (b).
 
           npm install mygithubuser/myproject
           npm install github:mygithubuser/myproject
-
-   To reference a package in a generic git repo (not on GitHub), see git remote
-   urls below.
 
 * `npm install gist:[<githubname>/]<gistID>[#<commit-ish>]`:
 
@@ -204,23 +218,6 @@ after packing it up into a tarball (b).
     Example:
 
           npm install gitlab:mygitlabuser/myproject
-
-* `npm install <git remote url>`:
-
-    Install a package by cloning a git remote url.  The format of the git
-    url is:
-
-          <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:/]<path>[#<commit-ish>]
-
-    `<protocol>` is one of `git`, `git+ssh`, `git+http`, or
-    `git+https`.  If no `<commit-ish>` is specified, then `master` is
-    used.
-
-    Examples:
-
-          git+ssh://git@github.com:npm/npm.git#v1.0.27
-          git+https://isaacs@github.com/npm/npm.git
-          git://github.com/npm/npm.git#v1.0.27
 
 You may combine multiple arguments, and even multiple types of arguments.
 For example:
