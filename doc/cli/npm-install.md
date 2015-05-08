@@ -155,49 +155,51 @@ after packing it up into a tarball (b).
           npm install sax@">=0.1.0 <0.2.0"
           npm install @myorg/privatepackage@">=0.1.0 <0.2.0"
 
-* `npm install <githubname>/<githubrepo>`:
+* `npm install <githubname>/<githubrepo>[#<commit-ish>]`:
+* `npm install github:<githubname>/<githubrepo>[#<commit-ish>]`:
 
     Install the package at `https://github.com/githubname/githubrepo` by
     attempting to clone it using `git`.
 
-    Example:
+    If you don't specify a *commit-ish* then `master` will be used.
+
+    Examples:
 
           npm install mygithubuser/myproject
+          npm install github:mygithubuser/myproject
 
    To reference a package in a generic git repo (not on GitHub), see git remote
    urls below.
 
-* `npm install github:<githubname>/<githubrepo>`:
-
-    The same as the above, but explicitly marked as a GitHub dependency.
-
-    Example:
-
-          npm install github:npm/npm
-
-* `npm install gist:[<githubname>/]<gistID>`:
+* `npm install gist:[<githubname>/]<gistID>[#<commit-ish>]`:
 
     Install the package at `https://gist.github.com/gistID` by attempting to
     clone it using `git`. The GitHub username associated with the gist is
     optional and will not be saved in `package.json` if `--save` is used.
 
+    If you don't specify a *commit-ish* then `master` will be used.
+
     Example:
 
           npm install gist:101a11beef
 
-* `npm install bitbucket:<bitbucketname>/<bitbucketrepo>`:
+* `npm install bitbucket:<bitbucketname>/<bitbucketrepo>[#<commit-ish>]`:
 
     Install the package at `https://bitbucket.org/bitbucketname/bitbucketrepo`
     by attempting to clone it using `git`.
+
+    If you don't specify a *commit-ish* then `master` will be used.
 
     Example:
 
           npm install bitbucket:mybitbucketuser/myproject
 
-* `npm install gitlab:<gitlabname>/<gitlabrepo>`:
+* `npm install gitlab:<gitlabname>/<gitlabrepo>[#<commit-ish>]`:
 
     Install the package at `https://gitlab.com/gitlabname/gitlabrepo`
     by attempting to clone it using `git`.
+
+    If you don't specify a *commit-ish* then `master` will be used.
 
     Example:
 
