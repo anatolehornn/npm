@@ -210,7 +210,7 @@ after packing it up into a tarball (b).
     Install a package by cloning a git remote url.  The format of the git
     url is:
 
-          <protocol>://[<user>[:<password>]@]<hostname><separator><path>[#<commit-ish>]
+          <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:/]<path>[#<commit-ish>]
 
     `<protocol>` is one of `git`, `git+ssh`, `git+http`, or
     `git+https`.  If no `<commit-ish>` is specified, then `master` is
