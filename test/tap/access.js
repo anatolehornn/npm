@@ -99,22 +99,6 @@ test("npm change access on unscoped package", function (t) {
   )
 })
 
-test("npm change access on unscoped package", function (t) {
-  common.npm(
-    [
-      "access",
-      "restricted", "yargs",
-      "--registry", common.registry
-    ],
-    { cwd : pkg },
-    function (er, code, stdout, stderr) {
-      t.ok(code, 'exited with Error')
-      t.ok(stderr.match(/you can't change the access level of unscoped packages/))
-      t.end()
-    }
-  )
-})
-
 test('npm access add', function (t) {
   common.npm(
     [
